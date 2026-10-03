@@ -1,0 +1,320 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6ecf0;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 440px;
+    box-sizing: border-box;
+}
+
+h2, h3, h4 {
+    text-align: center;
+    margin: 5px 0;
+}
+
+.wallet-logo {
+    width: 55px;
+    height: 50px;
+    background-color: #00bcd4;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: #555;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.balance-section {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.balance-section h3 {
+    font-size: 14px;
+    color: #444;
+}
+
+.balance-section h1 {
+    font-size: 28px;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.summary-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.summary-box {
+    flex: 1;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.summary-box h4 {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.income-box p {
+    color: #008000;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+}
+
+.expense-box p {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+}
+
+.history-section {
+    margin-bottom: 20px;
+}
+
+.history-section > h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.lists-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.list-column {
+    flex: 1;
+}
+
+.list-column h4 {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.income-title {
+    color: #008000;
+}
+
+.expense-title {
+    color: #ff0000;
+}
+
+.separator {
+    width: 1px;
+    background: #ddd;
+    margin: 0 10px;
+    align-self: stretch;
+}
+
+.transaction-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.history-item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 18px 8px 6px;
+    background: #f9f9f9;
+    margin-bottom: 6px;
+    border-radius: 6px;
+    font-size: 12px;
+    border-left: 3px solid #ccc;
+}
+
+.history-item.income {
+    border-left-color: #008000;
+}
+
+.history-item.expense {
+    border-left-color: #ff0000;
+}
+
+.delete-btn {
+    position: absolute;
+    right: 3px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    font-size: 9px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.history-item:hover .delete-btn {
+    display: flex;
+}
+
+/* নরমাল মোডে প্রিন্ট টোটালগুলো লুকানো থাকবে */
+.print-total {
+    display: none;
+}
+
+.form-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.form-section .form-group {
+    margin-bottom: 15px;
+}
+
+.form-section label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.sub-label {
+    font-weight: normal;
+    color: #666;
+    font-size: 11px;
+}
+
+.form-section input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.add-btn {
+    background: #00bcd4;
+    color: white;
+}
+
+.add-btn:hover {
+    background: #00acc1;
+}
+
+.footer-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.action-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.print-btn {
+    background: #4caf50;
+    color: white;
+}
+
+.print-btn:hover {
+    background: #43a047;
+}
+
+@media print {
+    body {
+        background-color: #fff;
+        padding: 0;
+        display: block;
+        min-height: auto;
+    }
+
+    .container {
+        box-shadow: none;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .form-section, .footer-actions, .delete-btn {
+        display: none !important;
+    }
+
+    .summary-section {
+        border: none;
+        background: none;
+        padding: 0;
+        margin-bottom: 15px;
+    }
+
+    .history-item {
+        background: none;
+        border: none;
+        border-bottom: 1px solid #ddd;
+        border-radius: 0;
+        padding: 6px 0;
+    }
+
+    /* প্রিন্ট করার সময় টোটালগুলো দেখা যাবে এবং স্টাইল পাবে */
+    .print-total {
+        display: block !important;
+        font-weight: bold;
+        font-size: 12px;
+        margin-top: 8px;
+        padding-top: 4px;
+        border-top: 1px solid #ccc;
+        text-align: left;
+    }
+
+    .print-income-total {
+        color: #008000 !important;
+    }
+
+    .print-expense-total {
+        color: #ff0000 !important;
+    }
+}
