@@ -1,12 +1,12 @@
 const CACHE_NAME = 'smart-wallet-v1';
 const ASSETS_TO_CACHE = [
     '/',
-    '/index.html',
-    '/app.js',
-    '/styles.css',
-    '/manifest.json',
-    '/icon/icon-192.png',
-    '/icon/icon-512.png'
+    './index.html',
+    './app.js',
+    './styles.css',
+    './manifest.json',
+    './icon/icon-192.png',
+    './icon/icon-512.png'
 ];
 
 // সার্ভিস ওয়ার্কার ইনস্টল করার সময় ফাইলগুলো ক্যাশ করা
