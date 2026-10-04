@@ -2,22 +2,23 @@ const CACHE_NAME = 'smart-wallet-v1';
 
 const ASSETS_TO_CACHE = [
   './',
-  './index.html',
-  './manifest.json',
-  './app.js',
-  './style.css'
+  './index.html'
 ];
 
 // সার্ভিস ওয়ার্কার ইনস্টল এবং ফাইল ক্যাশ করা
 self.addEventListener('install', (event) => {
-    event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then((cache) => {
-                console.log('Caching assets...');
-                return cache.addAll(ASSETS_TO_CACHE);
-            })
-            .then(() => self.skipWaiting())
-    );
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(async (cache) => {
+      console.log('Caching assets...');
+      for (const asset of ASSETS_TO_CACHE) {
+        try {
+          await cache.add(asset);
+        } catch (err) {
+          console.warn('Failed to cache:', asset);
+        }
+      }
+    }).then(() => self.skipWaiting())
+  );
 });
 
 // পুরনো ক্যাশ ডিলিট করে নতুন সার্ভিস ওয়ার্কার একটিভেট করা
