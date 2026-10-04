@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.mdmahfuzmia749_sketch.twa",
+        "sha256_cert_fingerprints": ["B7:40:BE:FB:14:B4:FF:AB:8D:45:CE:51:7A:D3:18:BF:78:CA:C9:0D:C8:54:CF:AE:43:F0:08:71:95:4E:4D:A5"]
+      }
+    }]
