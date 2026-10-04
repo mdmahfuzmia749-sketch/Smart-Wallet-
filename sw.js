@@ -17,10 +17,17 @@ self.addEventListener('install', (event) => {
     );
 });
 
-// নেটওয়ার্ক রিকোয়েস্ট ক্যাচ করে অফলাইনে ফাইল সার্ভ করা
 self.addEventListener('fetch', (event) => {
-    event.respondWith(
-        caches.match(event.request)
-            .then((response) => response || fetch(event.request))
-    );
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      if (response) {
+        return response;
+      }
+      return fetch(event.request).catch(() => {
+        if (event.request.mode === 'navigate') {
+          return caches.match('./index.html');
+        }
+      });
+    })
+  );
 });
